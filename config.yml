@@ -1,6 +1,6 @@
 title: Andrew Bergey
 description: Research in underwater acoustics, sensing, and communication
-theme: al-folio
+remote_theme: alshedivat/al-folio
 markdown: kramdown
 
 keywords: underwater acoustic, metastructure, research 
