@@ -3,6 +3,24 @@ description: Research in underwater acoustics, sensing, and communication
 theme: al-folio
 markdown: kramdown
 
+footer_text: >
+  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
+  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+  Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
+keywords: underwater acoustic, metastructure, research 
+lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
+icon: 🔉
+last_updated: true 
+back_to_top: true 
+
+navbar_fixed: true
+footer_fixed: true
+search_enabled: true
+socials_in_search: true
+posts_in_search: true
+bib_search: true
+
+
 social:
   - icon: linkedin
     link: https://www.linkedin.com/in/andrew-bergey/
