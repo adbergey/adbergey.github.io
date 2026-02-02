@@ -3,7 +3,7 @@ layout: home
 ---
 
 
-<img src="/images/headshot_wedding.png" 
+<img src="/images/headshot wedding.jpg" 
      alt="Andrew Bergey" 
      style="max-width:100%; height:auto;">
 
