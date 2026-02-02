@@ -12,3 +12,11 @@ social:
     link: https://github.com/adbergey
   - icon: envelope
     link: mailto:adbergey@uw.edu
+
+navbar:
+  - title: About
+    url: /
+  - title: Research
+    url: /research/
+  - title: Publications
+    url: /publications/
