@@ -16,6 +16,10 @@ socials_in_search: true
 posts_in_search: true
 bib_search: true
 
+profile:
+  align: left
+  image: headshot.jpg
+  image_circular: false
 
 social:
   - icon: linkedin
