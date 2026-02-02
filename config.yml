@@ -2,3 +2,13 @@ title: Andrew Bergey
 description: Research in underwater acoustics, sensing, and communication
 theme: al-folio
 markdown: kramdown
+
+social:
+  - icon: linkedin
+    link: https://www.linkedin.com/in/andrew-bergey/
+  - icon: google-scholar
+    link: https://scholar.google.com/citations?user=7PUB3g4AAAAJ&hl=en&oi=ao
+  - icon: github
+    link: https://github.com/adbergey
+  - icon: envelope
+    link: mailto:adbergey@uw.edu
