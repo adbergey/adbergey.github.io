@@ -4,15 +4,8 @@ layout: home
 
 # Andrew Bergey
 
-Welcome to my personal website.
+Hi, my name is Andrew Bergey and I am a 2nd year electrical engineering PhD student at the University of Washington. I work with Dr. Akshay Gadre in the Networking and Emerging Wireless Technologies (NEWT) Lab. The primary focus of my research is underwater acoustic metastructures for communication and sensing. Check out the latest projects happening in our lab [here](https://www.google.com/url?q=https%3A%2F%2Fnewtlab.ece.uw.edu%2F&sa=D)!
 
-I am a PhD student in Electrical Engineering at the University of Washington, working on underwater acoustic sensing and communication.
-
-## Research Interests
-- Underwater acoustics
-- Acoustic metastructures
-- Low-power sensing systems
-- Secure communication
 
 ## Contact
 - Email: adbergey@uw.edu
