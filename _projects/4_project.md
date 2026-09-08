@@ -1,25 +1,25 @@
 ---
 layout: page
-title: Underwater ToF Camera
-description: Developed a real time ToF camera for underwater applications
-img: assets/img/tof_pool.jpg
-importance: 2
+title: AMULET
+description: Acoustic metastructure for DoA estimation underwater via a single hydrophone
+img: assets/img/noLidMedCyl.png
+importance: 1
 category: Research
 related_publications: true
 ---
 
-Throughout my undergraduate years at Grove City College (2022-24), I worked with Prof. Luke Rumbaugh developing an underwater time-of-flight (ToF) camera. We took a commercial off the shelf camera which used infrared illumination, and built out hardware to allow the camera to operate using green lasers (an optimal wavelength for underwater imaging).  We then packaged all of the hardware to be deployed on a BlueRobotics BlueROV2.
-Check out this video from our collaborators at the U.S. Naval Air Warfare Center Aircraft Division which features my team demonstrating our camera in a Navy test tank. 
+Every project has a beautiful feature showcase page.
+It's easy to include images in a flexible 3-column grid format.
+Make your photos 1/3, 2/3, or full width.
 
-<iframe
-  width="560"
-  height="315"
-  src="https://www.youtube.com/embed/ABC123XYZ"
-  title="YouTube video player"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen>
-</iframe>
+To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+
+    ---
+    layout: page
+    title: project
+    description: a project with a background image
+    img: /assets/img/12.jpg
+    ---
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">

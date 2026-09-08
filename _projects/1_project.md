@@ -3,79 +3,253 @@ layout: page
 title: AMULET
 description: Acoustic metastructure for DoA estimation underwater via a single hydrophone
 img: assets/img/noLidMedCyl.png
-importance: 1
+importance: 3
 category: Research
-related_publications: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+# AMULET: Rethinking Underwater Direction Finding with a Single Receiver
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+## Overview
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+One of the quiet constraints in underwater robotics is **directional awareness**.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+If you want to know where a signal is coming from underwater, the standard answer has remained largely unchanged for decades: use an array of separated hydrophones and algorithms that take advantage of the spatial differences between the received signals.
 
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+This works well, but it doesn't scale easily to the newer generations of autonomous underwater vehicles (AUVs).
+
+Small AUVs, distributed sensor nodes, and low-power platforms simply don't have the size, weight, and power (SWaP) budget for large hydrophone arrays. Without direction-of-arrival (DoA) estimation, capabilities such as navigation, localization, and tracking become much more difficult.
+
+**AMULET** explores a different approach: achieving accurate underwater direction-of-arrival estimation using **a single hydrophone**.
+
+---
+
+## A Different Way to Think About the Problem
+
+Instead of trying to optimize an array, we asked a different question:
+
+> **Can we achieve high direction-of-arrival accuracy using only a single receiver?**
+
+This led us to **acoustic metastructures** — structures engineered to interact with sound in useful ways.
+
+We developed an underwater acoustic metastructure that surrounds a single hydrophone and alters an incoming acoustic signal differently depending on the angle from which the sound arrives.
+
+The receiver therefore doesn't simply measure the incoming sound. The **physical structure itself transforms the sound into a direction-dependent signature**.
+
+Once these signatures are learned, the receiver can compare a new measurement against the known signatures and estimate the direction of arrival.
+
+---
+
+## AMULET
+
+**AMULET** stands for **Acoustic Metastructure for Underwater Localization and Entity Tracking**.
+
+This work was developed at the University of Washington's Department of Electrical & Computer Engineering, with the goal of creating a compact, low-cost, and low-power alternative to traditional underwater hydrophone arrays.
+
+The system uses commodity hardware together with a custom, 3D-printable acoustic metastructure.
+
+The work was led by **Andrew Bergey**, with **Nakul Garg** and advised by **Akshay Gadre**.
+
+The research was accepted to **ACM/IEEE SenSys 2026**.
+
+[Read the full paper](https://doi.org/10.1145/3774906.3802750)
+
+[View the 3D models, code, and datasets](https://github.com/adbergey/amulet)
+
+---
+
+## How Does the Metastructure Work?
+
+A key challenge is creating enough distinction between acoustic signals arriving from different directions.
+
+Many conventional solid materials behave relatively similarly to water from an acoustic perspective. As a result, much of an incoming sound wave simply passes through the material without being significantly altered.
+
+The key insight came from nature.
+
+### Inspired by Marine Shells
+
+Some marine shells use internal air cavities to create complex acoustic behavior. These cavities create strong acoustic impedance contrasts and produce complicated reverberation patterns that depend on how sound interacts with the structure.
+
+AMULET borrows this idea.
+
+The metastructure contains a **spiral-shaped sealed air cavity** embedded within a 3D-printed structure.
+
+Because air and water have dramatically different acoustic impedances, the boundary between them strongly interacts with incoming sound waves.
+
+The changing width of the air cavity creates different acoustic paths and reverberation behavior throughout the structure.
+
+The result is a compact, passive structure that produces **distinct and repeatable acoustic signatures for different angles of arrival**.
+
+![AMULET metastructure](assets/img/amuletPaths.png)
+
+*The AMULET acoustic metastructure uses a structured air cavity to create direction-dependent acoustic signatures.*
+
+---
+
+## From Acoustic Signatures to Direction
+
+Once the metastructure creates these direction-dependent signatures, the problem becomes one of signal processing.
+
+The system operates in three primary steps.
+
+### 1. Extract the Signature
+
+Given a known transmit signal, we estimate the acoustic impulse response observed through the metastructure.
+
+This impulse response becomes the **signature** associated with a particular direction.
+
+### 2. Calibrate the Metastructure
+
+We rotate the metastructure through a range of known angles using a stepper motor.
+
+At each angle, the system records the corresponding acoustic signature.
+
+These measurements form a **signature dictionary** mapping acoustic responses to directions.
+
+*The metastructure is rotated through known angles during calibration to construct its directional signature dictionary.*
+
+### 3. Match an Unknown Signal
+
+When an unknown signal arrives, its measured signature is compared against the calibrated dictionary.
+
+The angle associated with the most similar signature becomes the estimated direction of arrival.
+
+In other words, rather than calculating direction from the spatial separation between multiple hydrophones, AMULET uses the **physical transformation performed by the metastructure** to encode spatial information into the received signal.
+
+---
+
+## Why Does This Work?
+
+The resulting acoustic signatures have several useful properties.
+
+### Distance Agnostic
+
+The signatures are largely independent of the distance between the transmitter and receiver.
+
+This means the same directional signature can remain useful even when the transmitter moves closer to or farther away from the receiver.
+
+### Robust to Multipath
+
+Underwater environments contain reflections from surfaces, boundaries, and other objects.
+
+Because the useful metastructure response is relatively short in duration, many reflected copies of the signal arrive outside the primary signature region.
+
+This allows much of the multipath energy to be rejected during processing.
+
+The result is a system that can extract directional information without requiring a perfectly controlled acoustic environment.
+
+---
+
+## Experimental Evaluation
+
+We evaluated AMULET across three different environments:
+
+- A small desktop aquarium
+- A large indoor saltwater tank
+- An open-water lake deployment
+
+We performed several experiments to understand both the accuracy and robustness of the system.
+
+These included:
+
+- Baseline direction-of-arrival measurements
+- Cross-environment calibration
+- Testing across different transmitter-receiver distances
+- Repeated experiments across different days
+- Complete teardown and reconstruction of the experimental setup
+- Tracking experiments using moving transmitters
+- Simultaneous tracking of multiple transmitters
+
+![Experimental setup](assets/img/amulet/Ocean_setup.jpg)
+
+*AMULET was evaluated across controlled laboratory environments and open-water deployments.*
+
+---
+
+## Results
+
+The results demonstrate that a single hydrophone can recover surprisingly accurate directional information when augmented by the metastructure.
+
+### Key Results
+
+| Experiment | Result |
+|---|---:|
+| Same-environment calibration | **~1–2° average error** |
+| Cross-environment calibration | **~4.1° average error** |
+| Tracking | **~2.9° median error** |
+| Multiple transmitters | **Simultaneous tracking demonstrated** |
+
+One particularly important result was the ability to calibrate the system in one environment and deploy it in another.
+
+After calibration indoors, AMULET achieved approximately **4.1° average error** when deployed in a lake.
+
+This suggests that the directional signatures are not merely artifacts of a particular experimental setup, but capture meaningful characteristics of the metastructure's acoustic response.
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/amuletMainResult.png" title="Baseline Results" class="img-fluid rounded z-depth-1" %}
+        These results show AMULET's baseline performance across environments and testing conditions.
     </div>
     <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/amuletTrackingResult.png" title="Tracking Result" class="img-fluid rounded z-depth-1" %}
+        This example tracking result shows that AMULET can track a cooperative transmitter across time and angle.
     </div>
 </div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
 
-{% raw %}
+## Why This Matters
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
+This work is not simply about replacing a hydrophone array with something smaller.
+
+It represents a different way of thinking about sensing systems.
+
+Traditional approaches often increase capability by adding more sensors, more hardware, and more computation.
+
+AMULET instead asks:
+
+> **What if some of the computation could happen in the physical layer?**
+
+The metastructure performs part of the transformation before the signal ever reaches the receiver.
+
+This creates the possibility of **compact, passive, low-power spatial sensing** using inexpensive hardware.
+
+For small AUVs and distributed underwater sensor networks, this could make directional acoustic sensing practical in situations where conventional hydrophone arrays are too large, expensive, or power-hungry.
+
+---
+
+## Future Directions
+
+There is still considerable work to do.
+
+One natural next step is extending AMULET from two-dimensional direction-of-arrival estimation to **full 3D direction sensing**.
+
+We are also interested in integrating the system with mobile platforms such as:
+
+- Autonomous underwater vehicles
+- Small robotic platforms
+- Divers
+- Distributed underwater sensor networks
+
+More broadly, AMULET explores how **physical structures can augment sensing capabilities without requiring additional sensors**.
+
+The broader vision is simple:
+
+> You don't necessarily need more sensors to get more information. Sometimes, you just need to think more carefully about how waves interact with the world.
+
+---
+
+## Resources
+
+- **Paper:** *AMULET: Acoustic Metastructure for Direction-of-Arrival Estimation Underwater Using a Single Hydrophone*
+- **Code, models, and datasets:** [GitHub](https://github.com/adbergey/amulet)
+- **Original article:** [LinkedIn](https://www.linkedin.com/pulse/amulet-rethinking-underwater-direction-finding-single-andrew-bergey-acgmc/)
+
+---
+
+## Acknowledgments
+
+This work was conducted at the **University of Washington Department of Electrical & Computer Engineering** as part of the **Networking and Emerging Wireless Technologies (NEWT) Lab**.
+
+The project was led by **Andrew Bergey**, in collaboration with **Nakul Garg** and under the guidance of **Akshay Gadre**.
+---
+
 ```
-
-{% endraw %}
