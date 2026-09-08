@@ -28,6 +28,9 @@ awards:
   - date: 2026
     title: PhD Forum Award
     description: SenSys 2026
+  - date: 2026
+    title: Best Demonstration Award
+    description: AFRL SDR Challenge 2026
 
 latest_posts:
   enabled: false
