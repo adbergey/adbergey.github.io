@@ -3,7 +3,7 @@ layout: page
 title: AMULET
 description: Acoustic metastructure for DoA estimation underwater via a single hydrophone
 img: assets/img/noLidMedCyl.png
-importance: 3
+importance: 1
 category: Research
 ---
 
@@ -159,7 +159,12 @@ These included:
 - Tracking experiments using moving transmitters
 - Simultaneous tracking of multiple transmitters
 
-![Experimental setup](assets/img/amulet/Ocean_setup.jpg)
+<div class="row justify-content-sm-center">
+    <div class="col-sm">
+        {% include figure.liquid path="assets/img/Ocean_setup.jpg" title="Experimental Setup" class="img-fluid rounded z-depth-1" %}
+        AMULET calibraiton setup in the indoor saltwater tank testbed.
+    </div>
+</div>
 
 *AMULET was evaluated across controlled laboratory environments and open-water deployments.*
 
@@ -189,7 +194,7 @@ This suggests that the directional signatures are not merely artifacts of a part
         {% include figure.liquid path="assets/img/amuletMainResult.png" title="Baseline Results" class="img-fluid rounded z-depth-1" %}
         These results show AMULET's baseline performance across environments and testing conditions.
     </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
+    <div class="col-sm-8 mt-3 mt-md-0">
         {% include figure.liquid path="assets/img/amuletTrackingResult.png" title="Tracking Result" class="img-fluid rounded z-depth-1" %}
         This example tracking result shows that AMULET can track a cooperative transmitter across time and angle.
     </div>

@@ -14,7 +14,7 @@ Check out this video from our collaborators at the U.S. Naval Air Warfare Center
 <iframe
   width="560"
   height="315"
-  src="https://www.youtube.com/embed/ABC123XYZ"
+  src="https://www.youtube.com/embed/90qg-l9EXGQ?si=z6DQSHJZzeZsxI7Q"
   title="YouTube video player"
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
