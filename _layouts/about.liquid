@@ -50,9 +50,9 @@ layout: default
 
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
-      <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
-      </h2>
+      
+      <h2>News</h2>
+      
       {% include news.liquid limit=true %}
     {% endif %}
 
@@ -71,6 +71,28 @@ layout: default
       </h2>
       {% include selected_papers.liquid %}
     {% endif %}
+
+    <!-- Awards -->
+    {% if page.awards %}
+    <h2>Awards</h2>
+
+    <div class="news">
+    <table class="table table-sm table-borderless">
+        {% for award in page.awards %}
+        <tr>
+            <th scope="row" style="width: 20%">{{ award.date }}</th>
+            <td>
+            <strong>{{ award.title }}</strong>
+            {% if award.description %}
+                - {{ award.description }}
+            {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+    {% endif %}
+
 
     <!-- Social -->
     {% if page.social %}
