@@ -79,9 +79,13 @@ The changing width of the air cavity creates different acoustic paths and reverb
 
 The result is a compact, passive structure that produces **distinct and repeatable acoustic signatures for different angles of arrival**.
 
-![AMULET metastructure](assets/img/amuletPaths.png)
 
-*The AMULET acoustic metastructure uses a structured air cavity to create direction-dependent acoustic signatures.*
+<div class="row justify-content-sm-center">
+    <div class="col-sm-8 mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/amuletPaths.png" title="Acoustic Paths" class="img-fluid rounded z-depth-1" %}
+        The AMULET acoustic metastructure uses a structured air cavity to create direction-dependent acoustic signatures.
+    </div>
+</div>
 
 ---
 
@@ -160,11 +164,13 @@ These included:
 - Simultaneous tracking of multiple transmitters
 
 <div class="row justify-content-sm-center">
-    <div class="col-sm">
+    <div class="col-sm-8 mt-3 mt-md-0">
         {% include figure.liquid path="assets/img/Ocean_setup.jpg" title="Experimental Setup" class="img-fluid rounded z-depth-1" %}
         AMULET calibraiton setup in the indoor saltwater tank testbed.
     </div>
 </div>
+
+
 
 *AMULET was evaluated across controlled laboratory environments and open-water deployments.*
 
