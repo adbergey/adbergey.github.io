@@ -66,7 +66,7 @@ horizontal: false
 </div>
 
 <style>
-.year {
+.category {
   color: #444444 !important;
 }
 </style>

@@ -21,7 +21,7 @@ nav_order: 2
 
 
 <style>
-.category {
+.year {
   color: #444444 !important;
 }
 </style>
