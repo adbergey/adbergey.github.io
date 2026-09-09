@@ -3,7 +3,7 @@ layout: page
 title: Underwater ToF Camera
 description: Developed a real time ToF camera for underwater applications
 img: assets/img/tof_pool.jpg
-importance: 2
+importance: 3
 category: Research
 related_publications: false
 ---

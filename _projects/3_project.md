@@ -1,9 +1,9 @@
 ---
 layout: page
 title: Husky Satellite Monitor
-description: Developed a low-cost SDR based Starlink satellite downlink testbed, capable of receiving, tracking, and identifying KU-band signals.
+description: Developed a low-cost SDR based Starlink satellite downlink testbed, capable of receiving, tracking, and identifying KU-band signals
 img: assets/img/sdr_challenge.jpg
-importance: 3
+importance: 2
 category: Research
 related_publications: false
 ---
