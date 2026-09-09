@@ -31,6 +31,9 @@ awards:
   - date: 2026
     title: Best Demonstration Award
     description: AFRL SDR Challenge 2026
+  - date: 2023
+    title: 2nd Place Student Poster Competition
+    description: IEEE/MTS OCEANS 2023
 
 latest_posts:
   enabled: false
