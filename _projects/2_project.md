@@ -5,7 +5,7 @@ description: Developed a real time ToF camera for underwater applications
 img: assets/img/tof_pool.jpg
 importance: 2
 category: Research
-related_publications: true
+related_publications: false
 ---
 
 Throughout my undergraduate years at Grove City College (2022-24), I worked with Prof. Luke Rumbaugh developing an underwater time-of-flight (ToF) camera. We took a commercial off the shelf camera which used infrared illumination, and built out hardware to allow the camera to operate using green lasers (an optimal wavelength for underwater imaging).  We then packaged all of the hardware to be deployed on a BlueRobotics BlueROV2.
