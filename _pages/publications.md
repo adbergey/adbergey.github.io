@@ -21,7 +21,7 @@ nav_order: 2
 
 
 <style>
-.year {
+h2.year {
   color: #444444 !important;
 }
 </style>
