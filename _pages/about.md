@@ -26,7 +26,7 @@ awards:
     title: Best Demo Award
     description: SenSys 2026
   - date: 2026
-    title: PhD Forum Award
+    title: Best PhD Forum Paper Award
     description: SenSys 2026
   - date: 2026
     title: Best Demonstration Award

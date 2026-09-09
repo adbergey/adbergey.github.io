@@ -18,3 +18,10 @@ nav_order: 2
 {% bibliography %}
 
 </div>
+
+
+<style>
+.category {
+  color: #444444 !important;
+}
+</style>

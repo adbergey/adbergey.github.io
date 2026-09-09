@@ -64,3 +64,9 @@ horizontal: false
   {% endif %}
 {% endif %}
 </div>
+
+<style>
+.category {
+  color: #444444 !important;
+}
+</style>
