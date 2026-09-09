@@ -21,7 +21,7 @@ nav_order: 2
 
 
 <style>
-h2.year {
+.bibliography {
   color: #444444 !important;
 }
 </style>
