@@ -26,7 +26,7 @@ This project is a follow-up to the AMULET project. We extended the signature dic
 </div>
 
 
-Here is a nice visualization of one of our tracking examples:
+<br><br>Here is a nice visualization of one of our tracking examples:
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
