@@ -26,34 +26,21 @@ This project is a follow-up to the AMULET project. We extended the signature dic
 </div>
 
 
-Here is a nice visualization of one of our tracking results:
+Here is a nice visualization of one of our tracking examples:
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
         <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; width: 100%;">
-            <iframe src="/widgets/score_prism_viewer.html" width="100%" height="720"
-                    style="border:0" loading="lazy" allowfullscreen
-                    title="SARDINE 3D Matching Score Viewer"></iframe>
-            <p><a href="/viz/score_prism_viewer.html">Open the viewer full screen</a></p>
+            <a href="/widgets/score_prism_viewer.html" target="_blank" rel="noopener"
+            style="display:block;position:relative;max-width:100%;aspect-ratio:16/9;border-radius:8px;overflow:hidden">
+            <img src="/assets/img/sardine3DViewerCover.png" alt="3D dictionary match score vs azimuth, elevation and time"
+                style="width:100%;height:100%;object-fit:cover;display:block">
+            <span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+                        background:rgba(0,0,0,.72);color:#fff;padding:10px 18px;border-radius:999px;
+                        font:600 15px/1.2 system-ui,sans-serif">▶ Open interactive 3D viewer</span>
+            </a>
         </div>
     </div>
 </div>
 
 
-
-<!--
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/tof_pool.jpg" title="ToF Camera on ROV" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/tof_SigBoard.png" title="Custom Signal and Power PCB" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/tof_pipes.png" title="ToF Images" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Some highlights from the project: Left: The ToF camera mounted on an ROV deployed in a pool. Middle: A signal and power redistribution breakout PCB I designed. Right: Some example images showing the depth data captured by the camera.
-</div>
--->

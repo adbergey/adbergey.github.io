@@ -50,6 +50,10 @@ select{background:var(--btn);color:var(--ink);border:1px solid var(--line);borde
 #legend .key{margin-top:10px;color:var(--ink2);display:grid;gap:4px}
 #readout{position:fixed;left:16px;right:16px;bottom:12px;color:var(--ink2);font-size:12px;pointer-events:none;text-align:center}
 #readout b{color:var(--ink)}
+.embed header{top:8px;left:10px} .embed header h1{font-size:13px} .embed header p{display:none}
+.embed #panel{top:40px;left:10px;width:240px;max-height:calc(100% - 52px)}
+.embed #legend{right:10px;bottom:10px;width:150px;padding:8px 10px} .embed #bar{height:90px}
+.embed #legend .key{display:none} .embed #readout{display:none}
 #err{display:none;position:fixed;inset:0;padding:40px;background:var(--bg);font-size:15px}
 @media (max-width:720px){
   header{right:16px} #legend{top:auto;bottom:40px;width:150px} #bar{height:120px}
@@ -1847,6 +1851,9 @@ labels.domElement.addEventListener('pointermove', ev => {
 const FLOOR = dec(DATA.floor), WALL = dec(DATA.wall);
 
 // ---------------------------------------------------------------- go
+// Embed mode (?embed=1): controls start collapsed, smaller header/legend, for use inside an iframe.
+const EMBED = new URLSearchParams(location.search).has('embed');
+if (EMBED) { document.documentElement.classList.add('embed'); $('panel').classList.add('closed'); $('panelToggle').setAttribute('aria-expanded', 'false'); }
 applyTheme(); buildPaths(); setMode('strong'); resize(); setView('png');
 })();
 </script>
